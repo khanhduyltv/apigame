@@ -1,0 +1,20 @@
+{
+  "name": "sunwin-api-tool",
+  "version": "1.0.0",
+  "description": "Tool get data SunWin và trả kết quả qua API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.2.1",
+    "fastify": "^4.25.2",
+    "ws": "^8.16.0"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "keywords": [],
+  "author": "Bạn",
+  "license": "ISC"
+}
