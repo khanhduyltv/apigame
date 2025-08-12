@@ -156,7 +156,7 @@ connectRikWebSocket();
 
 fastify.register(cors);
 
-fastify.get("/api/sunwin", async () => {
+fastify.get("/api/sunwin/2.0", async () => {
   const validResults = rikResults.filter(item => item.d1 && item.d2 && item.d3);
 
   if (validResults.length === 0) {
