@@ -2,7 +2,7 @@ const Fastify = require("fastify");
 const cors = require("@fastify/cors");
 const WebSocket = require("ws");
 
-const TOKEN = "yJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJnZW5kZXIiOjAsImNhblZpZXdTdGF0IjpmYWxzZSwiZGlzcGxheU5hbWUiOiJkdXlidXl4dG9vbCIsImJvdCI6MCwiaXNNZXJjaGFudCI6ZmFsc2UsInZlcmlmaWVkQmFua0FjY291bnQiOnRydWUsInBsYXlFdmVudExvYmJ5IjpmYWxzZSwiY3VzdG9tZXJJZCI6MTk0NTg4Njg3LCJhZmZJZCI6IlN1bndpbiIsImJhbm5lZCI6ZmFsc2UsImJyYW5kIjoic3VuLndpbiIsInRpbWVzdGFtcCI6MTc1NjczMzQ0OTg4NSwibG9ja0dhbWVzIjpbXSwiYW1vdW50IjowLCJsb2NrQ2hhdCI6ZmFsc2UsInBob25lVmVyaWZpZWQiOmZhbHNlLCJpcEFkZHJlc3MiOiIxMTYuOTkuMjUyLjE0OSIsIm11dGUiOmZhbHNlLCJhdmF0YXIiOiJodHRwczovL2ltYWdlcy5zd2luc2hvcC5uZXQvaW1hZ2VzL2F2YXRhci9hdmF0YXJfMDYucG5nIiwicGxhdGZvcm1JZCI6NSwidXNlcklkIjoiMmI2Yjc3ZTMtNjMzNy00MjIwLWI0MWQtMmMwMGI3Zjg3NTU0IiwicmVnVGltZSI6MTczMzkxNjM4NjU0MywicGhvbmUiOiIiLCJkZXBvc2l0Ijp0cnVlLCJ1c2VybmFtZSI6IlNDX2J1dHh0aG9pMTIifQ.ATHJcg4m5mpIBj0HF5p-wJF5T8EaINW0xz9tGT0hNvU";
+const TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJnZW5kZXIiOjAsImNhblZpZXdTdGF0IjpmYWxzZSwiZGlzcGxheU5hbWUiOiJodXBkY2tvaGF5eGl0IiwiYm90IjowLCJpc01lcmNoYW50IjpmYWxzZSwidmVyaWZpZWRCYW5rQWNjb3VudCI6ZmFsc2UsInBsYXlFdmVudExvYmJ5IjpmYWxzZSwiY3VzdG9tZXJJZCI6MjM5MjgwMjk1LCJhZmZJZCI6IkdFTVdJTiIsImJhbm5lZCI6ZmFsc2UsImJyYW5kIjoiZ2VtIiwidGltZXN0YW1wIjoxNzU2NzMzODM5MDMwLCJsb2NrR2FtZXMiOltdLCJhbW91bnQiOjAsImxvY2tDaGF0IjpmYWxzZSwicGhvbmVWZXJpZmllZCI6ZmFsc2UsImlwQWRkcmVzcyI6IjExNi45OS4yNTIuMTQ5IiwibXV0ZSI6ZmFsc2UsImF2YXRhciI6Imh0dHBzOi8vaW1hZ2VzLnN3aW5zaG9wLm5ldC9pbWFnZXMvYXZhdGFyL2F2YXRhcl8xNy5wbmciLCJwbGF0Zm9ybUlkIjo0LCJ1c2VySWQiOiI2ZTZhZTE2Zi02NzlkLTRiOTktYmY5MC01NDQ0NzA5ZWYzNzciLCJyZWdUaW1lIjoxNzQ1NDcyMjgyNjg1LCJwaG9uZSI6IiIsImRlcG9zaXQiOmZhbHNlLCJ1c2VybmFtZSI6IkdNX2J1dHh0aG9pIn0.V5biOdG7cPuXcBSl7cqAI1wxG_FiLRziV3_8Bn9smg8";
 
 const fastify = Fastify({ logger: false });
 const PORT = process.env.PORT || 3001;
@@ -68,23 +68,23 @@ function sendRikCmd1005() {
 
 function connectRikWebSocket() {
   console.log("🔌 Connecting to SunWin WebSocket...");
-  rikWS = new WebSocket(`wss://websocket.azhkthg1.net/websocket?token=${TOKEN}`);
+  rikWS = new WebSocket(`wss://websocket.gmwin.io/websocket?token=${TOKEN}`);
 
   rikWS.on("open", () => {
     const authPayload = [
       1,
       "MiniGame",
-      "SC_butxthoi12",
+      "GM_butxthoi12",
       "butx12",
       {
         info: JSON.stringify({
-          ipAddress: "27.76.164.129",
+          ipAddress: "116.99.252.149",
           wsToken: TOKEN,
-          userId: "2b6b77e3-6337-4220-b41d-2c00b7f87554",
-          username: "SC_butxthoi12",
+          userId: "6e6ae16f-679d-4b99-bf90-5444709ef377",
+          username: "GM_butxthoi",
           timestamp: 1755228143567
         }),
-        signature: "1B7FB0A5D91465981F737F01F5A4A57FF54EFDB732A700685160852F7847147AB90DE7F3CE0CDE3EE6BC7954940693A7BE2906C4A2DE5C428D9E7AC83E111049E95AD2DD63500F1D5252D2B518A0314C58F3A722017A0293D55677D28C592455A029D715BA366DE0CB5343B0207F3C281A95B4BDA69052DE468FB784A12FE815",
+        signature: "557B4BF66F124D18B7B1621DA3A085FA6A558FC7B8F2C195530A49C632198152CFE19C1D169C1F36387F18B4353F6B2FA24A3870140B3B2413A4D5ADB06158A3DF21E54CD69AAD5F8A3944AC5B3F9904C209E1B099460897B53C856F1ECDD27195848CF02C4EF6E84BA602E68B9E52FFA9182560C5F84CBE700F261D383189D",
         pid: 5,
         subi: true
       }
